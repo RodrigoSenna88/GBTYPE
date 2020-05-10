@@ -8,6 +8,10 @@ class AppointmentsRepository {
     this.appointments = [];
   }
 
+  public all(): Appointment[] {
+    return this.appointments;
+  }
+
   // verificação de agendamentos
 
   public findByDate(date: Date): Appointment | null {
