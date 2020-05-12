@@ -33,7 +33,10 @@ appointmentsRouter.post('/', (request, response) => {
 
   // método de  criação do agendamento
 
-  const appointment = appointmentsRepository.create(provider, parsedDate);
+  const appointment = appointmentsRepository.create({
+    provider,
+    date: parsedDate,
+  });
 
   return response.json(appointment);
 });
