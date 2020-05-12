@@ -7,6 +7,7 @@ class Appointment {
 
   date: Date;
 
+  // Omit serve para omitir um ou mais parâmetros específicos da função
   constructor({ provider, date }: Omit<Appointment, 'id'>) {
     this.id = uuid();
     this.provider = provider;
