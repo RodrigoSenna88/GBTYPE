@@ -3,13 +3,14 @@ import { parseISO } from 'date-fns';
 import { container } from 'tsyringe';
 
 import CreateAppointmentService from '@modules/appointments/services/CreateAppointmentService';
+// import AppointmentsRepository from '@modules/appointments/infra/typeorm/repositories/AppointmentsRepsitory';
 
 export default class AppointmentsController {
-  public async index(request: Request, response: Response): Promise<Response> {
-    const appointments = container.resolve(appointmentsRepository);
+  // public async index(request: Request, response: Response): Promise<Response> {
+  //   const appointments = container.resolve(AppointmentsRepository);
 
-    return response.json(appointments);
-  }
+  //   return response.json(appointments);
+  // }
 
   public async create(request: Request, response: Response): Promise<Response> {
     const { provider_id, date } = request.body;
