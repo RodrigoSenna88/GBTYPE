@@ -8,7 +8,7 @@ const appointmentsController = new AppointmentsController();
 
 appointmentsRouter.use(ensureAuthenticated);
 
-// appointmentsRouter.get('/', appointmentsController.create);
+// appointmentsRouter.get('/', appointmentsController.index);
 
 appointmentsRouter.post('/', appointmentsController.create);
 

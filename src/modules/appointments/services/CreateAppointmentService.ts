@@ -5,6 +5,7 @@ import AppError from '@shared/errors/AppError';
 
 import Appointment from '../infra/typeorm/entities/Appointment';
 import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
+// import AppointmentsRepository from '../infra/typeorm/repositories/AppointmentsRepsitory';
 
 interface IRequest {
   provider_id: string;
