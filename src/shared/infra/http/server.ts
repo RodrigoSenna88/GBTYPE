@@ -13,7 +13,7 @@ import '@shared/container/index';
 const app = express();
 
 app.use(express.json());
-app.use('/files', express.static(uploadConfig.tmpFolder));
+app.use('/files', express.static(uploadConfig.uploadsFolder));
 app.use(routes);
 
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
@@ -33,5 +33,5 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
 });
 
 app.listen(3333, () => {
-  console.log('servidor online');
+  ('servidor online');
 });
