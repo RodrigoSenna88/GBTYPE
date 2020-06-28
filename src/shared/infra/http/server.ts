@@ -33,5 +33,5 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
 });
 
 app.listen(3333, () => {
-  ('servidor online');
+  console.log('servidor online');
 });
