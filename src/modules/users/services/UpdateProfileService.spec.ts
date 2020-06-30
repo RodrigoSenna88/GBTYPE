@@ -21,7 +21,7 @@ describe('UpdateProfile', () => {
 
   it('should be able to update the profile', async () => {
     const user = await fakeUsersRepository.create({
-      name: 'John doe',
+      name: 'John Doe',
       email: 'johndoe@gmail.com',
       password: '123456',
     });
@@ -48,7 +48,7 @@ describe('UpdateProfile', () => {
 
   it('should not be able to change to another user email', async () => {
     await fakeUsersRepository.create({
-      name: 'John doe',
+      name: 'John Doe',
       email: 'johndoe@gmail.com',
       password: '123456',
     });
@@ -61,7 +61,7 @@ describe('UpdateProfile', () => {
 
     await expect(
       updateProfile.execute({
-        user_id: user.id.toString(),
+        user_id: user.id,
         name: 'John Doe',
         email: 'johndoe@gmail.com',
       }),
@@ -70,7 +70,7 @@ describe('UpdateProfile', () => {
 
   it('should be able to update the password', async () => {
     const user = await fakeUsersRepository.create({
-      name: 'John doe',
+      name: 'John Doe',
       email: 'johndoe@gmail.com',
       password: '123456',
     });
@@ -105,7 +105,7 @@ describe('UpdateProfile', () => {
 
   it('should not be able to update the password with wrong old password', async () => {
     const user = await fakeUsersRepository.create({
-      name: 'John doe',
+      name: 'John Doe',
       email: 'johndoe@gmail.com',
       password: '123456',
     });

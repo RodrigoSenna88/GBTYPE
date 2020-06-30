@@ -3,8 +3,6 @@ import { uuid } from 'uuidv4';
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 import ICreateUserDTO from '@modules/users/dtos/ICreateUserDTO';
 
-import usersRouter from '@modules/users/infra/http/routes/users.routes';
-import appointmentsRouter from '@modules/appointments/infra/http/routes/appointments.routes';
 import User from '../../infra/typeorm/entities/User';
 
 class UsersRepository implements IUsersRepository {
@@ -12,6 +10,7 @@ class UsersRepository implements IUsersRepository {
 
   public async findById(id: string): Promise<User | undefined> {
     const findUser = this.users.find(user => user.id === id);
+
     return findUser;
   }
 
@@ -24,7 +23,7 @@ class UsersRepository implements IUsersRepository {
   public async create(userData: ICreateUserDTO): Promise<User> {
     const user = new User();
 
-    Object.assign(user, { id: uuid }, userData);
+    Object.assign(user, { id: uuid() }, userData);
 
     this.users.push(user);
 
