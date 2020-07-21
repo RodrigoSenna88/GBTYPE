@@ -3,7 +3,6 @@ import { injectable, inject } from 'tsyringe';
 
 import AppError from '@shared/errors/AppError';
 
-import Notification from '@modules/notifications/infra/typeorm/schemas/Notification';
 import INotificationsRepository from '@modules/notifications/repositories/INotificationsRepository';
 
 import Appointment from '../infra/typeorm/entities/Appointment';
