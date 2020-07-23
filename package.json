@@ -13,6 +13,7 @@
   "dependencies": {
     "@types/ioredis": "^4.17.2",
     "@types/redis": "^2.8.25",
+    "aws-sdk": "^2.718.0",
     "bcryptjs": "^2.4.3",
     "celebrate": "^12.1.2",
     "class-transformer": "^0.2.3",
