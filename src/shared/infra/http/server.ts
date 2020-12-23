@@ -2,6 +2,7 @@ import 'reflect-metadata';
 import 'dotenv/config';
 
 import express, { Request, Response, NextFunction } from 'express';
+import cors from 'cors';
 import { errors } from 'celebrate';
 import 'express-async-errors';
 
@@ -14,6 +15,8 @@ import '@shared/infra/typeorm';
 import '@shared/container/index';
 
 const app = express();
+
+app.use(cors());
 
 app.use(rateLimiter);
 app.use(express.json());
