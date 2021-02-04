@@ -27,10 +27,15 @@ app.use(errors());
 
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   if (err instanceof AppError) {
-    return response.status(err.statusCode).json({
-      status: 'error',
-      message: err.message,
-    });
+    return response
+      .status(
+        err.statusCode >= 100 && err.statusCode < 600 ? err.statusCode : 500,
+      )
+      .send(err.message)
+      .json({
+        status: 'error',
+        message: err.message,
+      });
   }
 
   console.error(err);
